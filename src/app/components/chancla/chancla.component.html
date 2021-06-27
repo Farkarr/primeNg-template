@@ -1,0 +1,26 @@
+<div class="card">
+
+    <p-dataView [value]="chanclas" [paginator]="true" [rows]="2"  layout="grid">
+        <ng-template let-item pTemplate="gridItem">
+            <div class="p-col-12 p-md-4">
+                <div class="product-grid-item card">
+                    <div class="product-grid-item-top">
+                        <div>
+                            <i class="pi pi-tag product-category-icon"></i>
+                            <span class="product-category">{{item.synced}}</span>
+                        </div>
+                    </div>
+                    <div class="product-grid-item-content">
+                        <img [src]="item.thumbnail_url" [alt]="item.name" />
+                        <div class="product-name">{{item.name}}</div>
+                        <p-rating  [readonly]="true" [cancel]="false"></p-rating>
+                    </div>
+                    <div class="product-grid-item-bottom">
+                        <span class="product-price">${{item.variants}}</span>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        
+    </p-dataView>
+</div>
